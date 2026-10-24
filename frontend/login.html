@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ITSM | Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+    <main class="login-card">
+        <div class="brand-mark">IT</div>
+        <h1>Enterprise ITSM</h1>
+        <p class="muted">Sign in to your support workspace</p>
+
+        <form id="loginForm">
+            <label for="email">Email address</label>
+            <input id="email" type="email" required
+                   autocomplete="username"
+                   placeholder="you@company.com">
+
+            <label for="password">Password</label>
+            <input id="password" type="password" required
+                   autocomplete="current-password"
+                   placeholder="Enter your password">
+
+            <button type="submit" class="btn btn-primary">
+                Sign in
+            </button>
+            <p id="errorMessage" class="error" role="alert"></p>
+        </form>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

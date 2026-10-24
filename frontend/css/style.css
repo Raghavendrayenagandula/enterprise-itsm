@@ -1,0 +1,267 @@
+
+:root {
+    --primary: #315efb;
+    --primary-dark: #2448ce;
+    --background: #f4f6fb;
+    --surface: #ffffff;
+    --text: #1b2435;
+    --muted: #778198;
+    --border: #e3e8f1;
+    --danger: #c93645;
+    --success: #178657;
+    font-family: Inter, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-size: 14px;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.login-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: linear-gradient(135deg, #edf2ff, #f7f8fc);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--surface);
+    padding: 36px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 20px 60px #24345412;
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    color: white;
+    background: var(--primary);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+h1 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 19px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+label {
+    display: block;
+    margin: 18px 0 7px;
+    font-weight: 600;
+}
+
+input, textarea, select {
+    width: 100%;
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: 9px;
+    padding: 12px;
+    outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px #315efb18;
+}
+
+.btn {
+    border: 0;
+    padding: 11px 16px;
+    border-radius: 9px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.login-card .btn {
+    width: 100%;
+    margin-top: 22px;
+}
+
+.error {
+    color: var(--danger);
+    min-height: 20px;
+    line-height: 1.5;
+}
+
+.app-layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+}
+
+.sidebar {
+    background: #172238;
+    color: #fff;
+    padding: 24px 16px;
+}
+
+.sidebar h2 {
+    padding-left: 10px;
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #d6deed;
+    padding: 12px;
+    margin: 6px 0;
+    border-radius: 8px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    color: white;
+    background: #ffffff17;
+}
+
+.main-content {
+    padding: 30px;
+    min-width: 0;
+}
+
+.topbar, .section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.stat-card, .panel {
+    background: var(--surface);
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 30px;
+    font-weight: 750;
+    margin-top: 12px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    color: var(--muted);
+    font-weight: 600;
+    background: #fafbfe;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: #edf1fa;
+    font-size: 12px;
+}
+
+.form-panel {
+    max-width: 760px;
+}
+
+.form-panel textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.form-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+@media (max-width: 800px) {
+    .app-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        padding: 10px;
+    }
+
+    .sidebar h2 {
+        font-size: 17px;
+    }
+
+    .sidebar nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .sidebar a {
+        margin: 2px;
+    }
+
+    .main-content {
+        padding: 18px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}

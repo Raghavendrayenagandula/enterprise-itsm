@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ITSM | New Ticket</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar">
+        <h2>ITSM Portal</h2>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="tickets.html">Tickets</a>
+            <a class="active" href="create-ticket.html">Create Ticket</a>
+            <a href="#" id="logoutLink">Sign out</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1>Create IT Support Ticket</h1>
+        <p class="muted">Describe your incident or service request.</p>
+
+        <section class="panel form-panel">
+            <form id="createTicketForm">
+                <label for="title">Ticket title</label>
+                <input id="title" maxlength="200" required
+                       minlength="4"
+                       placeholder="e.g. Unable to access email">
+
+                <label for="type">Request type</label>
+                <select id="type">
+                    <option value="incident">Incident</option>
+                    <option value="service_request">Service request</option>
+                </select>
+
+                <label for="category">Category</label>
+                <select id="category">
+                    <option>General</option>
+                    <option>Hardware</option>
+                    <option>Software</option>
+                    <option>Network</option>
+                    <option>Email</option>
+                    <option>Access</option>
+                </select>
+
+                <label for="priority">Priority</label>
+                <select id="priority">
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
+                    <option value="critical">Critical</option>
+                </select>
+
+                <label for="description">Description</label>
+                <textarea id="description" required minlength="5"
+                          maxlength="10000"
+                          placeholder="Explain the problem and its impact"></textarea>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        Submit ticket
+                    </button>
+                    <a href="tickets.html" class="btn">Cancel</a>
+                </div>
+                <p id="createError" class="error" role="alert"></p>
+                <p id="createSuccess" role="status"></p>
+            </form>
+        </section>
+    </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/create-ticket.js"></script>
+</body>
+</html>
